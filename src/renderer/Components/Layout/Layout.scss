@@ -1,0 +1,18 @@
+.ant-layout-sider {
+    background-color: #fff;
+    .ant-menu{
+        .ant-menu-item {
+            border: 1px solid #eee;
+        }
+    }
+}
+.ant-layout-header {
+    color: #fff;
+    background: #001529;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .Logo {
+        font-size: 28px;
+    }
+}
