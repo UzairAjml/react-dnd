@@ -6,6 +6,8 @@ const EquipmentCard = ({title,imgsrc}) => {
     const [{isDragging} ,drag] = useDrag({
         type : itemTypes.CARD,
         item : {
+            title : title,
+            imgsrc : imgsrc
         },
         collect : monitor => ({
             isDragging : !!monitor.isDragging(),
