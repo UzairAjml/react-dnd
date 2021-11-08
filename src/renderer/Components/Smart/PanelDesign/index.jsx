@@ -1,12 +1,12 @@
 import { Card, Button,Radio} from 'antd';
-import DropDown from '../DropDown';
+import DropDown from '../../Presentational/DropDown';
 import './PanelDesign.scss';
 import React from 'react';
 
 const PanelDesign = () => {
   const options=['item1','item2'];
   return (
-    <Card style={{ width: 180,borderRadius:'7%',  border:'2px solid black',margin:'5px'}}>
+    <Card style={{ borderRadius:'7%',  border:'2px solid black',margin:'5px'}}>
     <div style={{display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
       <div style={{display:'flex',flexDirection:'column',marginBottom:'20px'}}>
 
