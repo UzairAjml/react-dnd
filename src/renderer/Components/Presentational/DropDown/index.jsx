@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
-import {Button,Dropdown,Menu,message} from 'antd';
+import {Button,Dropdown,Menu} from 'antd';
 import './dropdown.scss';
 
-const DropDown = ({options}) => {
-  function handleMenuClick(e) {
-    message.info('Click on menu item.');
-    console.log('click', e);
+const DropDown = ({options,callBack}) => {
+  const [topValue,setTopValue]=useState(null);
+  function handleSelect(targetValue) {
+    setTopValue(targetValue);
+    callBack(targetValue);
   }
   const menu = (
-    <Menu onClick={handleMenuClick}>
+    <Menu>
       {options.map((item,index) => {
-        return <Menu.Item key={index} icon={<UserOutlined />}>
+        return <Menu.Item key={index}  onClick={()=>handleSelect(item)}>
         {item}
       </Menu.Item>
       })
@@ -22,7 +23,7 @@ const DropDown = ({options}) => {
     <div >
        <Dropdown overlay={menu} >
       <Button className='btn'>
-        Button <DownOutlined />
+        {topValue ? topValue : 'Choose' } <DownOutlined />
       </Button>
     </Dropdown>
     </div>
