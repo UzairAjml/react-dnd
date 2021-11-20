@@ -1,0 +1,1 @@
+export const SET_DELETE_MODE = 'SET_DELETE_MODE';

@@ -2,8 +2,10 @@ import { combineReducers } from 'redux';
 import panelThemeReducer from './panelTheme/panelThemeReducers';
 import panelDimensionsReducer from './panelDimensions/panelDimensionsReducer';
 import panelMaterialsReducer from './panelMaterial/materialDimensionsReducer';
+import panelReducer from './Panel/panelReducer';
 
 const reducers = combineReducers({
+  panel: panelReducer,
   panelTheme: panelThemeReducer,
   panelDimensions: panelDimensionsReducer,
   panelMaterials: panelMaterialsReducer,
