@@ -13,7 +13,6 @@ const EquipmentCard = ({title,imgsrc}) => {
             isDragging : !!monitor.isDragging(),
         }),
     })
-    console.log(isDragging);
     return (
         <div onClick={()=>console.log(title)} className="EquipmentCard">
             <img ref={drag} width={60} height = {60} style={isDragging ? {opacity:"0.5"} : {opacity:"1"}} src={imgsrc}></img>
