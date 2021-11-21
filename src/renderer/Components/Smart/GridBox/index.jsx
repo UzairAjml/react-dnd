@@ -15,8 +15,8 @@ const PanelBox = () => {
           height:`${(dimensions.height)*3.77}px`,
           border: `${(dimensions.thickness)*3.77}px solid #000`,
           borderRadius:`${(dimensions.diameter)*3.77}px`}}>
-            <GridColumn/>
-            <GridColumn/>
+            <GridColumn ColumnID="Column1"/>
+            <GridColumn ColumnID="Column2"/>
         </div>
     )
 }
