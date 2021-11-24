@@ -11,14 +11,16 @@ const PanelDesign = () => {
   const colors=['red','black'];
   const materials=['Plexiglass (gloss)','Plexiglass (matte)', 'Anodised aluminium'];
   const cornerDiameter=[42,23];
+  const rows=[1,2,3];
 
-  const [length, setLength] = useState(100);
-  const [height, setHeight] = useState(100);
+  const [length, setLength] = useState(300);
+  const [height, setHeight] = useState(200);
   const [thickness, setThickness] = useState(1);
 
-  const [color,setColor]=useState('');
+  const [color,setColor]=useState('#171717');
   const [material,setMaterial]=useState('');
-  const [diameter,setDiameter]=useState(0);
+  const [diameter,setDiameter]=useState(10);
+  const [noOfRows,setRows]=useState(2);
 
   const dispatch = useDispatch();
 
@@ -27,7 +29,8 @@ const PanelDesign = () => {
       length:length,
       height:height,
       thickness:thickness,
-      diameter:diameter
+      diameter:diameter,
+      rows:noOfRows
     };
     dispatch(testAction(color));
     dispatch(dimensionAction(dimensions));
@@ -36,17 +39,17 @@ const PanelDesign = () => {
 
   useEffect(() => {
     handleActions();
-  }, [color,diameter,material,length,height,thickness])
+  }, [color,diameter,material,length,height,thickness,noOfRows])
 
   return (
-    <Card style={{ borderRadius:'7%',  border:'2px solid black',margin:'5px'}}>
+    <Card style={{ borderRadius:'7%',  border:'2px solid black',margin:'5px',overflow:'auto'}}>
     <div style={{display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
       <div style={{display:'flex',flexDirection:'column',marginBottom:'20px'}}>
 
       <h3>Dimensions</h3>
       <div style={{display:'flex',justifyContent:'space-between'}}>
-      <InputNumber min={1} max={300} value={length} onChange={setLength}/>
-      <InputNumber min={1} max={300} value={height} onChange={setHeight}/>
+      <InputNumber min={1} max={500} value={length} onChange={setLength}/>
+      <InputNumber min={1} max={500} value={height} onChange={setHeight}/>
       <InputNumber min={1} max={300} value={thickness} onChange={setThickness}/>
       </div>
       <div style={{display:'flex',justifyContent:'space-around'}}>
@@ -70,9 +73,14 @@ const PanelDesign = () => {
       <DropDown options={cornerDiameter} callBack={(targetValue)=>setDiameter(targetValue)}/>
       </div>
       <div className='dropdown-section'>
+      <h4>Rows in Grid</h4>
+      <DropDown options={rows} callBack={(targetValue)=>setRows(targetValue)}/>
+      </div>
+      <div className='dropdown-section'>
       <h4>Confirm Edges</h4>
       <Radio>Yes</Radio>
       </div>
+      
      </div>
 
     </div>

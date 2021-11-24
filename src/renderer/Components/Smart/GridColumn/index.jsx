@@ -76,8 +76,6 @@ const GridColumn = ({ColumnID}) => {
             ],
         }));
     }, [equipments]);
-
-    console.log(equipments , "Equipments Here")
     drop(ref);
     return (
         <>
@@ -91,9 +89,9 @@ const GridColumn = ({ColumnID}) => {
             draggable
             limit={1}
             />
-        <div id={ColumnID} ref={ref} style={ isOver ? {backgroundColor:"red", display:"flex" , width:"100%" , border:"1px solid red"  , height:"60px" , marginBottom:"10px" , alignItems:"center"} : { display:"flex" , width:"100%" , border:"1px solid red"  , height:"60px" , marginBottom:"10px" , alignItems:"center"}}>
+        <div id={ColumnID} ref={ref} style={{ display:"flex" , width:"100%" , border:"2px dotted gray"  , height:"115px" , marginBottom:"10px" , alignItems:"center"}}>
               { equipments && equipments.length ?
-              equipments.map((el,i)=><ImageCard  id={el.id} imgsrc={el.imgsrc} index={i} moveCard={moveCard} deleteEquipment={deleteEquipment}/>)
+              equipments.map((el,i)=><ImageCard  id={el.id} imgsrc={el.imgsrc} index={i} moveCard={moveCard} deleteEquipment={deleteEquipment} />)
               : ""
             }
         </div>

@@ -17,13 +17,13 @@ import './header.scss'
     },[checked])
     return (
       <Header className="site-layout__navbar" style={{ padding: '10px' }}>
-          <div className="Logo">
-              Toolbar
+          <div className="container">
+            <div className="title">Design!!</div>
           </div>
           <div className="tools">
             <i class="fas fa-trash-alt"></i>
             <span className="Deletetag">Delete :</span>
-          <Switch checked={checked} onChange={()=>setChecked(prevState=>!prevState)} />
+          <Switch checked={checked} onChange={()=>setChecked(prevState=>!prevState)}/>
           </div>
       </Header>
     );

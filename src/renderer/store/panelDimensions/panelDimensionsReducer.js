@@ -5,7 +5,8 @@ const initialState = {
     length:100,
     height:100,
     thickness:1,
-    diameter:1
+    diameter:1,
+    rows:2
   },
 };
 
