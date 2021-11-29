@@ -6,7 +6,7 @@
   const LayoutMain = ({children}) => {
   
     return (
-      <Layout>
+      <Layout style={{overflow:"hidden"}}>
            <Navbar />
        
         <Layout >

@@ -22,7 +22,7 @@ const Sidebar = () => {
           <EquipmentsPanel/>
           </div>
           
-           <div style={{height:"10%"}}>
+           <div style={{height:"53%"}}>
              <PanelDesign/>
             </div>
       </Sider>

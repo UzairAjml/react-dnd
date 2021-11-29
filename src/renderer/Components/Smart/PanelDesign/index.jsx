@@ -42,7 +42,7 @@ const PanelDesign = () => {
   }, [color,diameter,material,length,height,thickness,noOfRows])
 
   return (
-    <Card style={{ borderRadius:'7%',  border:'2px solid black',margin:'5px',overflow:'auto'}}>
+    <Card style={{ borderRadius:'7%',  border:'2px solid black',margin:'5px',height:"100%",overflowY:"scroll"}}>
     <div style={{display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
       <div style={{display:'flex',flexDirection:'column',marginBottom:'20px'}}>
 
