@@ -13,8 +13,8 @@ const PanelDesign = () => {
   const cornerDiameter=[42,23];
   const rows=[1,2,3];
 
-  const [length, setLength] = useState(300);
-  const [height, setHeight] = useState(200);
+  const [length, setLength] = useState(100);
+  const [height, setHeight] = useState(100);
   const [thickness, setThickness] = useState(1);
 
   const [color,setColor]=useState('#171717');

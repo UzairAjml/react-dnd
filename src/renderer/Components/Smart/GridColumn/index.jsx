@@ -5,10 +5,13 @@ import { itemTypes  } from 'renderer/utils/DndTypes';
 import ImageCard from 'renderer/Components/Presentational/ImageCard/ImageCard';
 import update from 'immutability-helper';
 import Column from 'antd/lib/table/Column';
+import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./GridColumn.scss";
 const GridColumn = ({ColumnID}) => {
+
+    const isDistributeAble = useSelector((state)=>state.panel.isDistribute)
     const ref = useRef(null);
     const [equipments,setEquipments] = useState([]);
     const [{isOver}, drop] = useDrop({
@@ -89,7 +92,7 @@ const GridColumn = ({ColumnID}) => {
             draggable
             limit={1}
             />
-        <div id={ColumnID} ref={ref} style={{ display:"flex" , width:"100%" , border:"2px dotted gray"  , height:"115px" , marginBottom:"10px" , alignItems:"center"}}>
+        <div id={ColumnID} ref={ref} style={{ display:"flex" , width:"100%" , border:"2px dotted gray"  , height:"115px" , marginBottom:"10px" , alignItems:"center",justifyContent:`${isDistributeAble ? 'space-evenly' : 'unset'}`}}>
               { equipments && equipments.length ?
               equipments.map((el,i)=><ImageCard  id={el.id} imgsrc={el.imgsrc} index={i} moveCard={moveCard} deleteEquipment={deleteEquipment} />)
               : ""

@@ -15,13 +15,14 @@ const Sidebar = () => {
         style={{
           height: '100vh',
           zIndex: 20,
+          backgroundColor:'black'
         }}
       >
           <div style={{height:"47%"}}>
           <EquipmentsPanel/>
           </div>
           
-           <div style={{height:"20%"}}>
+           <div style={{height:"10%"}}>
              <PanelDesign/>
             </div>
       </Sider>
