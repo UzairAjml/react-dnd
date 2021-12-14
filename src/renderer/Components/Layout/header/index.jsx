@@ -12,13 +12,14 @@ import './header.scss'
         if(checked) {
           dispatch(deleteAction(true));
         }
-        else if(distribute){
+        else {
+          dispatch(deleteAction(false));
+        }
+        if(distribute){
           dispatch(distributeAction(true));
         }
         else {
-          dispatch(deleteAction(false));
           dispatch(distributeAction(false));
-
         }
     },[checked,distribute])
     return (

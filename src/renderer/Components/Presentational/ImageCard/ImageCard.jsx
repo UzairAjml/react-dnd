@@ -7,7 +7,7 @@ import RemoveICON from '../../../../../assets/icons/remove.png';
 
 const ImageCard = ({id , imgsrc,index,moveCard ,deleteEquipment}) => {
     const isDeletable = useSelector((state)=>state.panel.isDelete)
-    console.log(isDeletable)
+    console.log(isDeletable , "isDeletable");
     const ref = useRef(null);
     const [{ handlerId }, drop] = useDrop({
         accept: "IMAGECARD",

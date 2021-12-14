@@ -16,21 +16,27 @@ const PanelDesign = () => {
   const [length, setLength] = useState(100);
   const [height, setHeight] = useState(100);
   const [thickness, setThickness] = useState(1);
+  const [cedges , setCedges] = useState(false);
 
   const [color,setColor]=useState('#171717');
   const [material,setMaterial]=useState('');
-  const [diameter,setDiameter]=useState(10);
+  const [diameter,setDiameter]=useState();
   const [noOfRows,setRows]=useState(2);
 
   const dispatch = useDispatch();
-
+  
+  const onChangeRadio = (e) => {
+    console.log("entered" , e.target.value);
+    setCedges(e.target.value);
+  }
   const handleActions=()=>{
     const dimensions={
       length:length,
       height:height,
       thickness:thickness,
       diameter:diameter,
-      rows:noOfRows
+      rows:noOfRows,
+      cedges : cedges
     };
     dispatch(testAction(color));
     dispatch(dimensionAction(dimensions));
@@ -39,7 +45,7 @@ const PanelDesign = () => {
 
   useEffect(() => {
     handleActions();
-  }, [color,diameter,material,length,height,thickness,noOfRows])
+  }, [color,diameter,material,length,height,thickness,noOfRows,cedges])
 
   return (
     <Card style={{ borderRadius:'7%',  border:'2px solid black',margin:'5px',height:"100%",overflowY:"scroll"}}>
@@ -70,7 +76,7 @@ const PanelDesign = () => {
       </div>
       <div className='dropdown-section'>
       <h4>corner diameter</h4>
-      <DropDown options={cornerDiameter} callBack={(targetValue)=>setDiameter(targetValue)}/>
+      <InputNumber style={{width:"100%"}} min={1} max={40} value={diameter} onChange={setDiameter} placeholder="Enter diameter" />
       </div>
       <div className='dropdown-section'>
       <h4>Rows in Grid</h4>
@@ -78,7 +84,10 @@ const PanelDesign = () => {
       </div>
       <div className='dropdown-section'>
       <h4>Confirm Edges</h4>
-      <Radio>Yes</Radio>
+      <Radio.Group onChange={onChangeRadio} value={cedges}>
+      <Radio value={true}>Yes</Radio>
+      <Radio value={false}>No</Radio>
+    </Radio.Group>
       </div>
       
      </div>

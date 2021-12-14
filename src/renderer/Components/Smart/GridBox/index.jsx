@@ -12,7 +12,6 @@ const PanelBox = () => {
 
   const gridRows=[];
 
-
   for(let i=1;i<=dimensions.rows;i++){
     gridRows.push(<GridColumn ColumnID={`Column${i}`}/>)
   }
@@ -22,7 +21,7 @@ const PanelBox = () => {
       return (
         <div  className="PanelBox" style={{width:`${(dimensions.length)*3.77}px` ,
           height:`${(dimensions.height)*3.77}px`,
-          border: `${(dimensions.thickness)*3.77}px solid #000`,
+          border: `${dimensions.cedges ? (dimensions.thickness)*3.77 : 0}px solid #d4d4d4`,
           borderRadius:`${(dimensions.diameter)*3.77}px`,
           backgroundColor:`${backgroundTheme}`}}>
           {gridRows}
