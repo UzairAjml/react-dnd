@@ -10,7 +10,7 @@ const EquipmentsPanel = () => {
           const EquipmentJSX = (
               <>
                    <h2 style={{borderBottom:"1px solid red"}} >{item}</h2>
-                   <div class="equipment-cards">
+                   <div className="equipment-cards">
                        {
                            Equipments[item].map((el)=>{
                              return <EquipmentCard key={el.id} title ={el.title} imgsrc = {el.imgsrc} />

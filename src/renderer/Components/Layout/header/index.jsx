@@ -28,13 +28,13 @@ import './header.scss'
             <div className="title">Design!!</div>
           </div>
           <div className="tools">
-            <i class="fas fa-trash-alt"></i>
+            <i className="fas fa-trash-alt"></i>
             <span className="Deletetag">Delete :</span>
           <Switch checked={checked} onChange={()=>setChecked(prevState=>!prevState)}/>
           
           </div>
           <div className="tools">
-            <i class="fas fa-trash-alt"></i>
+            <i className="fas fa-trash-alt"></i>
             <span className="Deletetag">Distribute :</span>
           <Switch checked={distribute} onChange={()=>setDistribute(prevState=>!prevState)}/>
           
