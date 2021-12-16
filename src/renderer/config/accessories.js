@@ -1,3 +1,18 @@
+import Plug from '../icons/12Vplug.png';
+import Fuse from '../icons/Fuseautomatic.png';
+import LED from '../icons/LEDlightRed.png';
+import Nitro from '../icons/Nitroswitch.png';
+import blueSteel from '../icons/StainlesssteelBlue.png';
+import redSteel from '../icons/StainlesssteelRed.png';
+import greenSteel from '../icons/StainlesssteelGreen.png';
+import Tumi from '../icons/Tuimelschakelaar.png';
+import blueSteel from '../icons/StainlesssteelBlue.png';
+import Usb from '../icons/USBplug.png';
+
+
+
+
+
 
 
 const Equipments = {
@@ -5,35 +20,51 @@ const Equipments = {
     Switches : [
         {  id : "switchblue",
            title : "Stainless steel pushbutton (16mm) with blue led",
-           imgsrc : "https://2ryul01momzwnfgn01s3t1kg-wpengine.netdna-ssl.com/wp-content/uploads/ACC_BLUE-min-1.png"
+           imgsrc : blueSteel
         },
         {
             id : "switchred",
            title : "Stainless steel pushbutton (16mm) with red led",
-           imgsrc : "https://2ryul01momzwnfgn01s3t1kg-wpengine.netdna-ssl.com/wp-content/uploads/ACC_BLUE-min-1.png"
+           imgsrc : redSteel
         },
         {
             id : "switchgreen",
             title : "Stainless steel pushbutton (16mm) with green led",
-            imgsrc : "https://2ryul01momzwnfgn01s3t1kg-wpengine.netdna-ssl.com/wp-content/uploads/ACC_BLUE-min-1.png"
-        }
+            imgsrc : greenSteel
+        },
+        {
+            id : "Nitro",
+            title : "Nitro Switch",
+            imgsrc : Nitro
+        },
     ],
     accessory : [
         {
             id : "usbport",
             title : "USB port",
-            imgsrc : "https://2ryul01momzwnfgn01s3t1kg-wpengine.netdna-ssl.com/wp-content/uploads/usb_1-min.png"
+            imgsrc : Usb
         },
         {
             id : "plug",
             title : "12V plug",
-            imgsrc : "https://2ryul01momzwnfgn01s3t1kg-wpengine.netdna-ssl.com/wp-content/uploads/usb_1-min.png"
+            imgsrc : Plug
         },
         {
-            id : "usbvoltage",
-            title : "USB port / voltage reader combination",
-            imgsrc : "https://2ryul01momzwnfgn01s3t1kg-wpengine.netdna-ssl.com/wp-content/uploads/usb_1-min.png"
-        }
+            id : "Tuimelscha",
+            title : "Tuimelscha kelaar",
+            imgsrc : Tumi
+        },
+        {
+            id : "Fuse",
+            title : "Fuse automatic",
+            imgsrc : Fuse
+        },
+        {
+            id : "LED",
+            title : "LED Light",
+            imgsrc : LED
+        },
+        
 
     ]
 }
