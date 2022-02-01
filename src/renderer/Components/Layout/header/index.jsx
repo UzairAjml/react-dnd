@@ -37,7 +37,7 @@ import './header.scss'
           
           </div>
           <div className="tools">
-            <i className="fas fa-trash-alt"></i>
+            <i className="fas fa-spider" style={{color:'gray',fontSize:'20px',paddingRight:'6px'}}></i>
             <span className="Deletetag">Grid :</span>
           <Switch checked={gridOn} onChange={()=>setGridOn(prevState=>!prevState)}/>
 
