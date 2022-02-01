@@ -6,7 +6,6 @@ import './header.scss'
   const { Header } = Layout;
   const Navbar = () => {
     const [checked,setChecked] = useState(false);
-    const [distribute,setDistribute] = useState(false);
     const dispatch = useDispatch();
     useEffect(()=>{
         if(checked) {
@@ -15,13 +14,7 @@ import './header.scss'
         else {
           dispatch(deleteAction(false));
         }
-        if(distribute){
-          dispatch(distributeAction(true));
-        }
-        else {
-          dispatch(distributeAction(false));
-        }
-    },[checked,distribute])
+    },[checked])
     return (
       <Header className="site-layout__navbar" style={{ padding: '10px' }}>
           <div className="container">
@@ -33,12 +26,7 @@ import './header.scss'
           <Switch checked={checked} onChange={()=>setChecked(prevState=>!prevState)}/>
           
           </div>
-          <div className="tools">
-            <i className="fas fa-trash-alt"></i>
-            <span className="Deletetag">Distribute :</span>
-          <Switch checked={distribute} onChange={()=>setDistribute(prevState=>!prevState)}/>
-          
-          </div>
+         
       </Header>
     );
   };

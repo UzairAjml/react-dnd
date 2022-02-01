@@ -10,8 +10,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./GridColumn.scss";
 const GridColumn = ({ColumnID}) => {
-
+    const {  panelDimensions: dimensions } = useSelector(({ panelDimensions }) => ({
+        panelDimensions:panelDimensions.panelDimensions,
+      }));
     const isDistributeAble = useSelector((state)=>state.panel.isDistribute)
+    console.log("rendered");
     const ref = useRef(null);
     const [equipments,setEquipments] = useState([]);
     const [{isOver}, drop] = useDrop({
@@ -33,7 +36,7 @@ const GridColumn = ({ColumnID}) => {
     //     }),
     // })
      const notifyError =() =>{
-        return toast.error("Panel Width is not enough" ,{
+        return toast.error("Cannot place item here" ,{
             position: "top-center",
             autoClose: 3000,
             hideProgressBar: true,
@@ -82,17 +85,7 @@ const GridColumn = ({ColumnID}) => {
     drop(ref);
     return (
         <>
-        <ToastContainer
-            position="top-center"
-            autoClose={3000}
-            hideProgressBar={true}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            draggable
-            limit={1}
-            />
-        <div id={ColumnID} ref={ref} style={{ display:"flex" , width:"100%" , border:"2px dotted gray"  , height:"115px" , marginBottom:"10px" , alignItems:"center",justifyContent:`${isDistributeAble ? 'space-evenly' : 'unset'}`}}>
+        <div id={ColumnID} ref={ref} style={{ display:"flex" , width:"100%" , border:"2px dotted gray"  , height:"70px"  , alignItems:"center",width:"50px",justifyContent:"center"}}>
               { equipments && equipments.length ?
               equipments.map((el,i)=><ImageCard  id={el.id} imgsrc={el.imgsrc} index={i} moveCard={moveCard} deleteEquipment={deleteEquipment} />)
               : ""

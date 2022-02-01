@@ -9,12 +9,22 @@ const PanelBox = React.forwardRef((props,ref) => {
     panelDimensions:panelDimensions.panelDimensions,
     panelMaterials: panelMaterials.panelMaterials,
   }));
+ console.log("isGridBOX Rendered")
+  const generateGridRows = () => {
+    const widthSection = dimensions?.length * 3.77;
+    const noOfColumns = Math.trunc(widthSection / 50);
+    const gridRows = [];
+    const sectionHeight = dimensions?.height * 3.77;
+    const nofRows = Math.trunc(sectionHeight / 70);
+    console.log(nofRows , " no of ROws")
+    const totalSection = noOfColumns * nofRows;
+    for(let i=1;i<=totalSection;i++){
+      gridRows.push(<GridColumn ColumnID={`Column${i}`}/>)
+    }
+    return gridRows;
 
-  const gridRows=[];
-
-  for(let i=1;i<=dimensions.rows;i++){
-    gridRows.push(<GridColumn ColumnID={`Column${i}`}/>)
   }
+ 
 
 
   const [selectedMaterial,setSelectedMaterial]=useState(material);
@@ -25,7 +35,7 @@ const PanelBox = React.forwardRef((props,ref) => {
           borderRadius:`${(dimensions.diameter)*3.77}px`,
           backgroundColor:selectedMaterial==='Anodised aluminium' ? '#a79f8e' : selectedMaterial==='Plexiglass (matte)'  ? ' #171717' : selectedMaterial==='Plexiglass (gloss)'  ? '#0D5BE1' : backgroundTheme
           }}>
-          {gridRows}
+          {generateGridRows()}
         </div>
     )
 })

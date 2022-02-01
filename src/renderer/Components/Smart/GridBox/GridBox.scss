@@ -1,8 +1,9 @@
 
 .PanelBox {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
     cursor: cell;
 }
 @media print{

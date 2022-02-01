@@ -5,10 +5,3 @@ export const deleteAction = (payload) => {
         payload:payload
     }
 }
-
-export const distributeAction = (payload) => {
-    return {
-        type : SET_DISTRIBUTE_MODE,
-        payload:payload
-    }
-}
