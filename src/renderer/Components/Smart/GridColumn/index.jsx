@@ -13,7 +13,7 @@ const GridColumn = ({ColumnID}) => {
     const {  panelDimensions: dimensions } = useSelector(({ panelDimensions }) => ({
         panelDimensions:panelDimensions.panelDimensions,
       }));
-    const isDistributeAble = useSelector((state)=>state.panel.isDistribute)
+    const isGridOn = useSelector((state)=>state.panel.isGrid)
     console.log("rendered");
     const ref = useRef(null);
     const [equipments,setEquipments] = useState([]);
@@ -85,7 +85,7 @@ const GridColumn = ({ColumnID}) => {
     drop(ref);
     return (
         <>
-        <div id={ColumnID} ref={ref} style={{ display:"flex" , width:"100%" , border:"2px dotted gray"  , height:"70px"  , alignItems:"center",width:"50px",justifyContent:"center"}}>
+        <div id={ColumnID} ref={ref} style={isGridOn ? {border:'2px dotted gray'} : {}} className='main-div'>
               { equipments && equipments.length ?
               equipments.map((el,i)=><ImageCard  id={el.id} imgsrc={el.imgsrc} index={i} moveCard={moveCard} deleteEquipment={deleteEquipment} />)
               : ""

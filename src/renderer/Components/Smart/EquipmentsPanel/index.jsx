@@ -13,7 +13,7 @@ const EquipmentsPanel = () => {
                    <div className="equipment-cards">
                        {
                            Equipments[item].map((el)=>{
-                             return <EquipmentCard key={el.id} title ={el.title} imgsrc = {el.imgsrc} />
+                             return <EquipmentCard key={el.id} title ={el.title} imgsrc = {el.imgsrc}/>
                            })
 
                        }

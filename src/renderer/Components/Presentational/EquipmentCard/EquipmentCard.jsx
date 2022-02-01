@@ -15,7 +15,7 @@ const EquipmentCard = ({title,imgsrc}) => {
     })
     return (
         <div onClick={()=>console.log(title)} className="EquipmentCard">
-            <img ref={drag} width={60} height = {60} style={isDragging ? {opacity:"0.5"} : {opacity:"1"}} src={imgsrc}></img>
+            <img ref={drag} width={60} height = {60} style={isDragging ? {opacity:"0.5"} : {opacity:"1"}, {objectFit:'contain'}} src={imgsrc}></img>
             <p className="description">{title}</p>
         </div>
     )

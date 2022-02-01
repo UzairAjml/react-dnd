@@ -50,7 +50,7 @@ const ImageCard = ({id , imgsrc,index,moveCard ,deleteEquipment}) => {
     drag(drop(ref));
     return (
         <div className="ImageCard" style={{position:"relative"}}>
-        <img ref={ref} style={isDragging ? {opacity:0.5 , minWidth:"40px"} : {opacity:1 , minWidth:"40px"}} width={40} height={40} src={imgsrc} onClick={()=>console.log(id , "id Here")}/>
+        <img ref={ref} style={isDragging ? {opacity:0.5 , minWidth:"40px"} : {opacity:1 , minWidth:"40px"},{objectFit:'contain'}} width={40} height={40} src={imgsrc} onClick={()=>console.log(id , "id Here")}/>
          {isDeletable ?
          <img src={RemoveICON} className="deleteIcon" onClick={()=>deleteEquipment(id)}/>
          : ''

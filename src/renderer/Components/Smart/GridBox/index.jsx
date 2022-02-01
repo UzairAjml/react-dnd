@@ -26,14 +26,12 @@ const PanelBox = React.forwardRef((props,ref) => {
   }
  
 
-
-  const [selectedMaterial,setSelectedMaterial]=useState(material);
       return (
         <div  className="PanelBox" ref={ref} style={{width:`${(dimensions.length)*3.77}px` ,
           height:`${(dimensions.height)*3.77}px`,
           border: `${dimensions.cedges ? (dimensions.thickness)*3.77 : 0}px solid #d4d4d4`,
           borderRadius:`${(dimensions.diameter)*3.77}px`,
-          backgroundColor:selectedMaterial==='Anodised aluminium' ? '#a79f8e' : selectedMaterial==='Plexiglass (matte)'  ? ' #171717' : selectedMaterial==='Plexiglass (gloss)'  ? '#0D5BE1' : backgroundTheme
+          backgroundColor:material==='Anodised aluminium' ? '#a79f8e' : material=='Plexiglass (matte)'  ? ' #171717' : material==='Plexiglass (gloss)'  ? '#0D5BE1' : backgroundTheme
           }}>
           {generateGridRows()}
         </div>

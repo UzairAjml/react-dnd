@@ -8,6 +8,7 @@ import greenSteel from '../icons/StainlesssteelGreen.png';
 import Tumi from '../icons/Tuimelschakelaar.png';
 import blueSteel from '../icons/StainlesssteelBlue.png';
 import Usb from '../icons/USBplug.png';
+import Hole from '../icons/sphere.png';
 
 
 
@@ -64,8 +65,13 @@ const Equipments = {
             title : "LED Light",
             imgsrc : LED
         },
-        
-
+    ],
+    holes:[
+        {
+            id : "Hole",
+            title : "Hollow Hole",
+            imgsrc : Hole
+        },
     ]
 }
 export {Equipments}

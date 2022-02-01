@@ -27,7 +27,7 @@ export default function App() {
     <DndProvider backend={HTML5Backend}>
     <LayoutMain>
 
-    <button onClick={handlePrint}>Print this out!</button>
+    <button onClick={handlePrint} style={{background:"black",borderRadius:'10px',padding:'5px',color:'white'}}>Print this out!</button>
       <PanelBox ref={componentRef}/>
     </LayoutMain>
     </DndProvider>

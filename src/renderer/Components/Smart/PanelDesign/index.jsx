@@ -79,10 +79,6 @@ const PanelDesign = () => {
       <InputNumber style={{width:"100%"}} min={1} max={40} value={diameter} onChange={setDiameter} placeholder="Enter diameter" />
       </div>
       <div className='dropdown-section'>
-      <h4>Rows in Grid</h4>
-      <DropDown options={rows} callBack={(targetValue)=>setRows(targetValue)}/>
-      </div>
-      <div className='dropdown-section'>
       <h4>Confirm Edges</h4>
       <Radio.Group onChange={onChangeRadio} value={cedges}>
       <Radio value={true}>Yes</Radio>
